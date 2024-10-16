@@ -1,0 +1,12 @@
+-- 1728999892120.do.state_create.sql
+
+CREATE TABLE state (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    is_capital BOOLEAN DEFAULT FALSE,
+    country_id INT NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    deleted_at TIMESTAMPTZ NULL,
+    FOREIGN KEY (country_id) REFERENCES country(id)
+);
