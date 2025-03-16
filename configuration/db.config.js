@@ -7,7 +7,7 @@ const sequelize = new Sequelize(
   process.env.POSTGRES_DATABASE_USER,
   process.env.POSTGRES_DATABASE_PASSWORD,
   {
-    host: "localhost",
+    host:process.env.POSTGRES_DATABASE_HOST || "localhost",
     dialect: "postgres",
     port: 5432,
     // TODO: add custom logger here for SQL queries
